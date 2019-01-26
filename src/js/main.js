@@ -187,6 +187,7 @@ createRestaurantHTML = restaurant => {
   const srcElementOne = document.createElement("source");
   const srcElementTwo = document.createElement("source");
   const srcElementMain = document.createElement("source");
+  const srcElementFallback = document.createElement("source");
   const image = document.createElement("img");
   image.className = "restaurant-img";
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
@@ -203,9 +204,15 @@ createRestaurantHTML = restaurant => {
     "srcset",
     `/webpimg/${restaurant.id}-medium.webp`
   );
+  srcElementFallback.setAttribute(
+    "srcset",
+    `${DBHelper.imageUrlForRestaurant(restaurant)}`
+  );
+  pictureElement.appendChild(srcElementFallback);
   pictureElement.appendChild(srcElementMain);
   pictureElement.appendChild(srcElementOne);
   pictureElement.appendChild(srcElementTwo);
+
   pictureElement.appendChild(image);
   li.append(pictureElement);
 

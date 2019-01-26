@@ -357,9 +357,14 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   title.setAttribute("tabindex", "-1");
   const restImage = document.querySelector("#restaurant-pic");
   const mainPictureSrc = document.createElement("source");
+  const srcElementFallback = document.createElement("source");
   mainPictureSrc.setAttribute(
     "srcset",
     `/webpimg/${restaurant.id}-medium.webp`
+  );
+  srcElementFallback.setAttribute(
+    "srcset",
+    `${DBHelper.imageUrlForRestaurant(restaurant)}`
   );
   const smallImgSrc = document.querySelector(".src-small-pic");
   smallImgSrc.setAttribute("srcset", `/images/${restaurant.id}-small.jpg`);
@@ -368,6 +373,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.setAttribute("alt", `Image for ${restaurant.name}`);
   restImage.insertBefore(mainPictureSrc, restImage.childNodes[0]);
+  restImage.insertBefore(srcElementFallback, restImage.childNodes[0]);
   const cuisine = document.getElementById("restaurant-cuisine");
   cuisine.innerHTML = restaurant.cuisine_type;
 
