@@ -1,0 +1,858 @@
+/* CSS Document */
+html {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden; }
+
+body,
+td,
+th,
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #333;
+  line-height: 1.5; }
+
+body {
+  background-color: #fdfdfd;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; }
+
+ul,
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #333; }
+
+a {
+  color: orange;
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  color: #3397db;
+  text-decoration: none; }
+
+a img {
+  border: none 0px #fff; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 20px; }
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+.leaflet-container a {
+  color: #0a3648 !important; }
+
+#maincontent {
+  background-color: #f3f3f3;
+  min-height: 100%; }
+
+#footer {
+  background-color: #444;
+  color: #ccccd0;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase; }
+
+.icon-credit {
+  font-size: 5pt; }
+
+/* ====================== Navigation ====================== */
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #252831;
+  text-align: center; }
+
+nav h1 {
+  margin: auto; }
+
+nav h1 a {
+  color: #fff;
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-transform: uppercase; }
+
+#breadcrumb {
+  padding: 10px 40px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+  width: calc(50% - 80px); }
+
+/* Display list items side by side */
+#breadcrumb li {
+  display: inline;
+  font-size: 19px; }
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0"; }
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+  color: #005aa7;
+  text-decoration: none;
+  font-size: 19px; }
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline; }
+
+/* ====================== Map ====================== */
+#map {
+  height: 400px;
+  width: 100%;
+  background-color: #ccc; }
+
+/* ====================== Restaurant Filtering ====================== */
+.filter-options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  background-color: #3b90ce;
+  align-items: center;
+  border-top: 1px inset #fdfdfd;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.13); }
+
+.filter-options h2 {
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 20px;
+  text-decoration: underline;
+  display: none; }
+
+.filter-options select {
+  background-color: white;
+  border: 1px solid #fff;
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+  height: 35px;
+  letter-spacing: 0;
+  margin: 10px;
+  padding: 0 10px;
+  width: 25%; }
+
+.restaurants-select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #363535 50%), linear-gradient(135deg, #303030 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5); }
+
+.restaurants-select:focus {
+  background-image: linear-gradient(45deg, #161616 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #191a19 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: black;
+  outline: none; }
+
+/* ====================== Restaurant Listing ====================== */
+#restaurants-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 25px;
+  grid-row-gap: 25px;
+  overflow-y: hidden;
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  padding: 40px 15px;
+  text-align: center;
+  margin-bottom: 0; }
+
+#restaurants-list li {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  min-height: 380px;
+  padding: 15px 20px 10px 10px;
+  text-align: left;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+#restaurants-list li:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12); }
+
+#restaurants-list .restaurant-img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+  min-width: 100%; }
+
+#restaurants-list li h2 {
+  color: #9a4e12;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 20px 0 10px;
+  text-transform: uppercase; }
+
+.restaurant-address-container {
+  background: #fdfdfd;
+  padding: 10px; }
+
+#restaurants-list .restaurant-neighborhood {
+  color: #252831;
+  font-weight: 800; }
+
+#restaurants-list p {
+  margin: 0;
+  font-size: 13pt; }
+
+#restaurants-list li a {
+  background-color: #252831;
+  border-radius: 3px;
+  color: #ddd;
+  display: inline-block;
+  font-size: 10pt;
+  margin: 15px 0 0;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  max-width: 100%;
+  min-width: 100%;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.37);
+  transition: 0.3s; }
+
+#restaurants-list li a:hover {
+  box-shadow: none; }
+
+/* ====================== Restaurant Details ====================== */
+.inside header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; }
+
+.inside #map-container {
+  background: blue none repeat scroll 0 0;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  width: 50%;
+  z-index: 10; }
+
+.inside #map-container-mobile {
+  background: blue none repeat scroll 0 0;
+  min-height: 200px;
+  height: 400px;
+  width: 100%;
+  z-index: 10;
+  margin-top: 60px;
+  margin-bottom: 2px; }
+
+.inside #map {
+  background-color: #ccc;
+  height: 100%;
+  width: 100%;
+  z-index: 10; }
+
+.inside #footer {
+  bottom: 0;
+  position: absolute;
+  width: 50%;
+  z-index: 0; }
+
+.side-left {
+  background-color: #eee;
+  margin-right: 5px; }
+
+.side-right {
+  background-color: #eee;
+  margin-left: 5px; }
+
+#restaurant-name {
+  color: #f18200;
+  font-family: Arial, sans-serif;
+  font-size: 20pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  margin: 15px 0 30px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  visibility: hidden; }
+
+#restaurant-img {
+  width: 100%;
+  height: auto; }
+
+#restaurant-address {
+  font-size: 12pt;
+  margin: 10px 0px; }
+
+#clock-icon {
+  font-size: 1.3em;
+  color: rgba(154, 78, 18, 0.8);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); }
+
+#address-icon {
+  font-size: 2em;
+  color: #3b90ce; }
+
+#restaurant-cuisine {
+  background-color: #333;
+  color: #ddd;
+  font-size: 12pt;
+  font-weight: 300;
+  letter-spacing: 10px;
+  margin: 0 0 20px;
+  padding: 2px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+
+#restaurant-title {
+  font-size: 3em;
+  font-weight: 200;
+  margin-bottom: 0;
+  text-align: center;
+  color: #9a4e12;
+  font-family: "Work Sans", sans-serif; }
+
+#restaurant-container {
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  border-top: 1px solid #fff;
+  width: 50%; }
+
+#restaurant-info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 10px; }
+
+#favoriteBtn {
+  position: relative;
+  margin-right: auto;
+  margin-left: 30px;
+  margin-bottom: 30px; }
+
+.fas.fa-heart {
+  position: absolute;
+  font-size: 40px;
+  color: #ddd;
+  transition: 0.3s;
+  outline: none;
+  cursor: pointer; }
+
+.fas.fa-heart:hover {
+  text-shadow: 0 0 2px rgba(228, 39, 39, 0.9) !important; }
+
+.fas.fa-heart.favorite {
+  color: #e42727 !important; }
+
+.accordion-container {
+  display: grid;
+  grid-auto-rows: minmax(auto);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+  /* padding-bottom: 15px; */
+  max-width: 100%;
+  min-width: 80%; }
+
+.accordion-btn {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.4em;
+  cursor: pointer;
+  color: #333333;
+  padding-top: 7px;
+  background: #fff; }
+
+.accordion-container:hover {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5); }
+
+.accordion-btn:after {
+  content: "\02795";
+  font-size: 1.4em;
+  float: left;
+  transition: opacity 1.2s ease-out; }
+
+.accordion-btn.active:after {
+  content: "\2796";
+  transition: opacity 1.2s ease-out; }
+
+#restaurant-hours {
+  padding: 0 10px;
+  background: #fff;
+  color: #000;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  display: none; }
+
+.restaurant-hours-day {
+  font-weight: 800;
+  color: #000 !important; }
+
+#reviews-container {
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-auto-rows: minmax(auto);
+  width: 50%; }
+
+#reviews-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 100px; }
+
+.reviews-head {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  padding: 15px;
+  position: relative; }
+
+#reviews-icon {
+  width: 75%;
+  height: 75%;
+  margin-top: 20px;
+  align-self: flex-end;
+  margin: 0 auto; }
+
+.add-review-btn {
+  position: absolute;
+  left: 35px;
+  height: 55px;
+  width: 165px;
+  background: #252831;
+  border-radius: 75px;
+  box-shadow: 0 2px 5px 0 rgba(0, 4, 7, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s; }
+
+.add-review-btn:focus {
+  outline: none; }
+
+.add-review-btn:hover {
+  box-shadow: none; }
+
+#reviews-container h3 {
+  color: #fa882d;
+  font-size: 24pt;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: 1pt;
+  text-align: center;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  visibility: hidden; }
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  background: #252831;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #9a4e12; }
+
+.review-head .review-date {
+  color: #ddd;
+  padding: 10px 15px 0px 15px;
+  margin: 0;
+  margin-left: auto !important; }
+
+.review-head .review-name {
+  color: #fff;
+  padding: 10px 15px 0px 15px;
+  font-size: 1.2em;
+  font-weight: 900;
+  background: #252831;
+  margin: 0;
+  border-top-left-radius: 20px; }
+
+.review-content {
+  padding: 15px; }
+
+.review-rating span {
+  background: #f58500;
+  padding: 5px;
+  color: #fff;
+  border-radius: 20px; }
+
+.stars {
+  font-size: 1.5em; }
+
+.review-comments {
+  font-size: 1.1em;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.05);
+  color: #444; }
+
+#reviews-list {
+  margin: 0;
+  padding: 0; }
+
+#reviews-list li {
+  background-color: #fff;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  box-shadow: 0 0 4px 0 rgba(17, 22, 26, 0.16), 0 2px 4px 0 rgba(17, 22, 26, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+#reviews-list li p {
+  margin: 0 0 10px; }
+
+#restaurant-hours td {
+  color: #666;
+  padding: 7px; }
+
+/* ==== ADD A REVIEW / MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1111;
+  background: rgba(0, 0, 0, 0.6);
+  animation: openModal 0.5s; }
+
+.modal-content {
+  background-color: #f3f3f3;
+  margin: 5% auto;
+  width: 70%;
+  border-radius: 5px;
+  border: 3px solid #252831;
+  box-shadow: 0 19px 28px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+.modal-content .modal-header {
+  position: relative;
+  height: 50px;
+  background: #252831;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 200;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.modal-content .modal-header h2 {
+  margin: 0; }
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.9em;
+  color: #ddd;
+  transition: 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer; }
+
+.close-btn:hover {
+  color: #fff; }
+
+.modal-body {
+  padding: 45px 20px; }
+
+.modal-body .addReview-form {
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 15px;
+  grid-gap: 35px;
+  align-items: center; }
+
+.form-group {
+  position: relative; }
+
+input[name="name"] {
+  font-size: 18px;
+  padding: 23px 0px 5px 5px;
+  display: block;
+  width: 99%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  font-weight: 400;
+  transition: 0.2s;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px; }
+
+input[name="name"]:focus {
+  outline: none; }
+
+.form-group label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 15px;
+  transition: 0.4s ease all; }
+
+input[name="name"]:focus ~ label,
+input[name="name"]:valid ~ label {
+  top: 3px;
+  font-size: 14px;
+  color: #9a4e12; }
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%; }
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #9a4e12;
+  transition: 0.2s ease all; }
+
+.bar:before {
+  left: 50%; }
+
+.bar:after {
+  right: 50%; }
+
+input[name="name"]:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%; }
+
+.comments-textarea {
+  font-size: 18px;
+  padding: 23px 0px 15px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  font-weight: 400;
+  transition: 0.3s;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  resize: none;
+  overflow: auto;
+  transition: 0.2s; }
+
+.comments-textarea:focus {
+  outline: none; }
+
+.form-group-textarea {
+  position: relative; }
+
+.form-group-textarea label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 15px;
+  transition: 0.4s ease all; }
+
+.comments-textarea:focus ~ label,
+.comments-textarea:valid ~ label {
+  top: 3px;
+  font-size: 14px;
+  color: #9a4e12;
+  transition: 0.4s ease all; }
+
+.comments-textarea:focus ~ .bar:before {
+  width: 51%; }
+
+.comments-textarea:focus ~ .bar:after {
+  width: 50%; }
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse; }
+
+.rating input {
+  clip-path: polygon(0 0);
+  width: 1px; }
+
+.rating label {
+  display: block;
+  cursor: pointer;
+  width: 25px;
+  position: relative; }
+
+.rating label:before {
+  content: "\f005";
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  position: relative;
+  display: block;
+  font-size: 25px;
+  color: #ddd; }
+
+.rating label:after {
+  content: "\f005";
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  position: absolute;
+  display: block;
+  font-size: 25px;
+  color: #fbcd28;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after {
+  opacity: 1; }
+
+.form-row.btn {
+  width: 400px; }
+
+#selectRatingTxt {
+  font-weight: 600; }
+
+.submitReview-btn {
+  margin-bottom: 15px;
+  background-color: #252831;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10pt;
+  margin: 15px 0 0;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.37);
+  transition: 0.3s;
+  padding: 15px;
+  cursor: pointer; }
+
+.submitReview-btn:hover {
+  box-shadow: none; }
+
+.submitReview-btn:focus {
+  outline: none; }
+
+.snackbar-msg {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  bottom: 3%;
+  left: 3%;
+  min-width: 205px;
+  font-size: 19px;
+  padding: 20px;
+  background: #252831;
+  color: #fff;
+  font-weight: 600;
+  line-height: 2;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.1s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  outline: none;
+  opacity: 1;
+  transform: translateY(250px); }
+
+.snackbar-msg.activate {
+  animation: slideDown 7.5s 0.1s 1 ease forwards; }
+
+.snackbar-dismiss {
+  margin-left: 20px;
+  color: orange;
+  letter-spacing: 2px;
+  font-weight: 100;
+  transition: 0.3s;
+  padding: 0 10px;
+  border-radius: 3px;
+  cursor: pointer; }
+
+.snackbar-dismiss:hover {
+  background: rgba(255, 165, 0, 0.1); }
+
+@keyframes openModal {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes slideDown {
+  0%,
+  100% {
+    transform: translateY(250px); }
+  10%,
+  90% {
+    transform: translateY(0px); } }

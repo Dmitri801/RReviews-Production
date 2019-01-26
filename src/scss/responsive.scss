@@ -1,0 +1,138 @@
+@media screen and (min-width: 1148px) {
+  #review-head #review-name {
+    min-width: 10% !important;
+  }
+
+  .modal-body {
+    padding: 50px 60px !important;
+  }
+
+  .comments-textarea {
+    width: 470px !important;
+  }
+
+  .form-row.btn {
+    width: 600px !important;
+  }
+}
+
+@media screen and (max-width: 1149px) {
+  #restaurants-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .comments-textarea {
+    width: 470px !important;
+  }
+}
+
+@media screen and (max-width: 972px) {
+  #restaurant-container {
+    width: 100% !important;
+  }
+  #breadcrumb {
+    width: 100% !important;
+  }
+
+  .inside #footer {
+    width: 100% !important;
+  }
+  #reviews-container {
+    width: 100% !important;
+  }
+  .accordion-container {
+    width: 100% !important;
+  }
+  #review-head #review-name {
+    min-width: 10% !important;
+  }
+  .rating-container {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .form-row {
+    grid-template-columns: 4fr !important;
+    grid-gap: 5px !important;
+  }
+  input[name="name"] {
+    width: 370px !important;
+  }
+  .comments-textarea {
+    width: 370px !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #restaurants-list {
+    grid-template-columns: 1fr;
+  }
+  .filter-options select {
+    width: 50%;
+  }
+  #reviews-icon {
+    width: 30% !important;
+  }
+  .inside #footer {
+    display: flex;
+    flex-flow: column;
+    padding-left: 0;
+  }
+  .icon-credit {
+    font-size: 3pt !important;
+  }
+}
+
+@media screen and (max-width: 596px) {
+  #review-head #review-name {
+    min-width: 20% !important;
+  }
+
+  .modal-content {
+    width: 90% !important;
+  }
+
+  input[name="name"] {
+    width: 270px !important;
+  }
+
+  .comments-textarea {
+    width: 300px !important;
+  }
+  .form-row.btn {
+    width: 230px !important;
+  }
+  .modal-content .modal-header h2 {
+    font-size: 0.9em !important;
+  }
+  .comments-textarea:focus ~ .bar:before {
+    width: 50% !important;
+  }
+  #favoriteBtn {
+    margin-left: 10px !important;
+  }
+  .fas.fa-heart {
+    font-size: 30px !important;
+  }
+
+  .snackbar-msg {
+    font-size: 17px !important;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #reviews-icon {
+    align-self: flex-start !important;
+  }
+  .add-review-btn {
+    bottom: 0 !important;
+  }
+  #restaurant-address {
+    text-align: center;
+  }
+  .comments-textarea {
+    width: 250px !important;
+  }
+  .snackbar-dismiss {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Restaurant Reviews - Udacity Mobile Web Specialist Project -",
+  "short_name": "RR",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#252831",
+  "icons": [
+    {
+      "src": "/img/icons/RR-Icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icons/RR-Icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

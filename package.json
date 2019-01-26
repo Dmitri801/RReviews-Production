@@ -1,0 +1,25 @@
+{
+  "name": "mws_restaurant_reviews",
+  "version": "0.3.0",
+  "licence": "MIT",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "concurrently": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2",
+    "imagemin": "^6.1.0",
+    "imagemin-webp": "^5.0.0",
+    "live-server": "^1.2.1",
+    "moment": "^2.23.0",
+    "wait-on": "^3.2.0"
+  },
+  "devDependencies": {
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-useref": "^3.1.6"
+  }
+}
