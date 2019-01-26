@@ -6,19 +6,7 @@
 
 ## **Restaurant Reviews**
 
-- After cloning or downloading project run `npm install`
-- Than move into the Server directory and run `npm install`
-- Return back to the root directory
 
-## 1. For development purposes
-
-`npm run dev`
-
-## 2. For testing/grading purposes
-
-`npm run audit`
-
----
 
 # Features
 
